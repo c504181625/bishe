@@ -1,0 +1,109 @@
+<div class="wrap">
+  <div id="echart01">
+    <div class="airnum">
+      <div class="air01">
+        <i>实时空气质量：</i>
+        <span>{{todayAirData.category}}</span>
+      </div>
+      <div class="air02">
+        <i>空气质量指数：</i>
+        <span>{{todayAirData.aqi}}</span>
+      </div>
+      <div class="air03">
+        <i>空气质量指数等级:</i>
+        <span> {{todayAirData.level}}</span>
+      </div>
+      <div class="air04">
+        <i>主要污染物：</i>
+        <span>{{todayAirData.primary}}</span>
+      </div>
+    </div>
+    <div id="e01">
+    </div>
+  </div>
+  <div id="echart02">
+    <div class="warning">
+      <h3 class="top-war">实时天气</h3>
+      <div class="bu">
+        <div class="temp">
+          <div class="warning03">
+            <span> {{todayWarData.text}}</span>
+          </div>
+        </div>
+        <div class="we-right">
+          <div class="we-sport">
+            <span *ngIf="todayWerthData[0]">运动指数: {{todayWerthData[0].level}}</span>
+            <span *ngIf="todayWerthData[0]" style="margin-left: 30px;">指数建议:{{todayWerthData[0].text}}</span>
+          </div>
+          <div class="we-car">
+            <span *ngIf="todayWerthData[1]">洗车指数: {{todayWerthData[1].level}}</span>
+            <span *ngIf="todayWerthData[1]" style="margin-left: 30px;">指数建议:{{todayWerthData[1].text}}</span>
+          </div>
+        </div>
+        <div class="bottom-war">
+          <div class="warning05" style="float: left;margin-left: 5%;height:20%;">
+            <span style="display: block;font-weight: 600;font-size:16px;">{{todayWarData.windScale}}级</span>
+            <span style="font-weight: 600;">{{todayWarData.windDir }}</span>
+          </div>
+          <div class="warning06" style="float: left;margin-left: 5%;height:20%;">
+            <span style="display: block;font-weight: 600;font-size: 16px;"> {{todayWarData.humidity}}%</span>
+            <span>相对湿度</span>
+          </div>
+          <div class="warning09" style="float: left;margin-left: 5%;height:20%;">
+            <span style="display: block;font-weight: 600;font-size: 16px;"> {{todayWarData.pressure}} hPa</span>
+            <span>大气压强:</span>
+          </div>
+          <div class="warning10" style="float: left;margin-left: 5%;height:20%;">
+            <span style="display: block;font-weight: 600;font-size: 16px;"> {{todayWarData.vis}} km</span>
+            <span>能见度</span>
+          </div>
+          <div class="warning11" style="float: left;margin-left: 5%;height:20%;">
+            <span style="display: block;font-weight: 600;font-size: 16px;"> {{todayWarData.feelsLike}}℃</span>
+            <span>体感温度</span>
+          </div>
+          <div class="warning12" style="float: left;margin-left: 5%;height:20%;">
+            <span style="display: block;font-weight: 600;font-size: 16px;"> {{todayWarData.precip}}mm</span>
+            <span>降水量</span>
+          </div>
+          <div class="warning13" style="float: left;margin-left: 5%;height:20%;">
+            <span style="display: block;font-weight: 600;font-size: 16px;"> 8%</span>
+            <span>云量</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="e02">
+
+    </div>
+  </div>
+  <div id="echart03">
+  </div>
+  <div id="echart04" style="display: inline-block;">
+    <div class="left-button">
+      <div class="citybox">
+        <nz-switch [(ngModel)]="cityValue" class="bt" (click)="cityCli(cityValue)"></nz-switch>
+        <span>行政区划</span>
+      </div>
+      <div class="windbox">
+        <nz-switch [(ngModel)]="windValue" class="bt" (click)="windCli(windValue)"></nz-switch>
+        <span>风场</span>
+      </div>
+      <div class="tempbox">
+        <nz-switch [(ngModel)]="tempValue" class="bt" (click)="tempCli(tempValue)"></nz-switch>
+        <span>温度</span>
+      </div>
+      <div class="cloudbox">
+        <nz-switch [(ngModel)]="cloudValue" class="bt" (click)="cloudCli(cloudValue)"></nz-switch>
+        <span>云量</span>
+      </div>
+      <div class="prebox">
+        <nz-switch [(ngModel)]="preValue" class="bt" (click)="preCli(preValue)"></nz-switch>
+        <span>压强</span>
+      </div>
+      <div class="rainbox">
+        <nz-switch [(ngModel)]="rainValue" class="bt" (click)="rainCli(rainValue)"></nz-switch>
+        <span>降水</span>
+      </div>
+    </div>
+  </div>
+</div>

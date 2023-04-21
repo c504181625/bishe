@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="bg">
+      <div class="content-layout">
+        <div class="head">
+          <img class="logo" alt="" src="./assets/imgs/logo-color.svg" />
+          <span class="title">北京市气象数据动态分布系统</span>
+          <div>
+            <span class="title-2">Beijing Meteorology</span>
+          </div>
+        </div>
+      </div>
+      <div class="login-form-wrap">
+        <form class="login-form" nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+      
+          <nz-form-item>
+            <nz-form-control nzErrorTip="用户名错误">
+              <nz-input-group [nzSize]="'large'">
+                <input type="text" formControlName="userName" id="username" maxLength="20" name="username"
+                  [(ngModel)]="username" (keypress)="enterPress($event)" nz-input placeholder="用户名"
+                  [placeholder]="'请输入用户名'" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <nz-form-item>
+            <nz-form-control nzErrorTip="密码错误">
+              <nz-input-group [nzSize]="'large'">
+                <input type="password" autocomplete="on" id="password" maxLength="20" name="password" [(ngModel)]="password"
+                  (keypress)="enterPress($event)" formControlName="password" nz-input placeholder="密码"
+                  [placeholder]="'请输入密码'" />
+              </nz-input-group>
+            </nz-form-control>
+          </nz-form-item>
+          <div class="login-form-margin" nz-row>
+            <div nz-col [nzSpan]="12">
+              <label formControlName="remember" nz-checkbox>
+                <span style="color: #fff;">记住密码</span>
+              </label>
+            </div>
+          </div>
+          <button class="login-form-button login-form-margin" nz-button nzSize="large" (keypress)="enterPress($event)"
+            [nzType]="'primary'" (click)="isLogin()">登 录</button>
+        </form>
+      </div>
+      
+    </div>
+  </div>
